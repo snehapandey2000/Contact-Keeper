@@ -1,13 +1,13 @@
 const express = require('express');
 const router=express.Router();
-const btcrypt=require("bcryptjs");
+const bcrypt=require("bcryptjs");
 const config=require("config");
 const { check, validationResult } = require('express-validator');
 const User=require("../models/User");
 const jwt=require("jsonwebtoken");
 
 router.post("/",[
-    check("name", "Please add your name").not.isEmpty(),
+    check("name", "Please add your name").notEmpty(),
     check("email", "Please add valid email address").isEmail(),
     check("password", "Please enter a passowrd with 6 or more characters")
     .isLength({

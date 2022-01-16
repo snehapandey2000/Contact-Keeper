@@ -1,8 +1,8 @@
 const express = require('express');
 const router=express.Router();
-const btcrypt=require("bcryptjs");
+const bcrypt=require("bcryptjs");
 const config=require("config");
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 const User=require("../models/User");
 const jwt=require("jsonwebtoken");
 const auth= require("../middleware/auth");
@@ -33,8 +33,7 @@ async function(req,res){
         if(!user){
             return res.status(400).json({msg:"Inavlid Credentials"});
         }
-
-        const isMatch=await bycrypt.compare(password,user.password);
+        const isMatch=await bcrypt.compare(password,user.password);
         if(!isMatch){
             return res.status(400).json({msg:"Inavlid Credentials"});
         }
