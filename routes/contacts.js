@@ -6,11 +6,11 @@ router.get("/", function(req,res){
 });
 
 router.post("/", function(req,res){
-    res.send("add contact");
+    res.send("Add contact");
 })
 
 router.put("/:id", function(req,res){
-    res.send("update contact");
+    res.send("Update contact");
 })
 
 router.delete("/:id", function(req,res){
