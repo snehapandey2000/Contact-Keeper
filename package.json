@@ -4,13 +4,20 @@
   "description": "Contact Keeper",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "Sneha Pandey",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^7.0.0",
     "config": "^3.3.7",
     "express": "^4.17.2",
     "express-validator": "^6.14.0",
