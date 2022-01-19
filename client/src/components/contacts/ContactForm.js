@@ -4,7 +4,7 @@ import ContactContext from '../../context/contact/contactContext';
 function ContactForm(){
     const contactContext=useContext(ContactContext);
 
-    const {addContact, current, clearCurrent}=contactContext;
+    const {addContact, current, clearCurrent, updateContact}=contactContext;
 
     const [contact,setContact]=useState(
         {
@@ -35,10 +35,10 @@ function ContactForm(){
     function onSubmit(event){
         event.preventDefault();
         if(current===null){
-            add.Contact(contact);
+            addContact(contact);
         }
         else{
-
+            updateContact(contact);
         }
         clearAll();
     }
