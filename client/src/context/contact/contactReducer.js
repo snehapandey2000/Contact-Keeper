@@ -24,7 +24,7 @@ export default (state,action)=>{
                 console.log(action);
                 return{
                     ...state,
-                    contacts:[...state.contacts, action.payload],
+                    contacts:[action.payload, ...state.contacts],
                     loading: false
                 };
             }
@@ -56,7 +56,7 @@ export default (state,action)=>{
             return{
                 ...state,
                 contacts: state.contacts.map(contact=>
-                    contact.id===action.payload.id? action.payload: contact
+                    contact._id===action.payload._id? action.payload: contact
                 ),
                 loading: false
 
