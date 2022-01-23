@@ -11,6 +11,7 @@ import ContactState from "./context/contact/ContactState";
 import AuthState from "./context/auth/AuthState";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from './utils/setAuthToken';
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -27,7 +28,10 @@ function App() {
         <div className="container">
           <Alerts/>
           <Routes>
-            <Route exact path="/" element={<Home/>}/>
+          <Route exact path='/' element={<PrivateRoute/>}>
+            <Route exact path='/' element={<Home/>}/>
+          </Route>
+            {/* <PrivateRoute exact path="/" element={<Home/>}/> */}
             <Route exact path="/about" element={<About/>}/>
             <Route exact path="/register" element={<Register/>}/>
             <Route exact path="/login" element={<Login/>}/>
