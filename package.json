@@ -1,6 +1,9 @@
 {
   "name": "contact_kepper",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "description": "Contact Keeper",
   "main": "server.js",
   "scripts": {
