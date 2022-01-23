@@ -17,9 +17,6 @@ connectDB();
 //body-parser
 app.use(express.json({extended:false}));
 
-// app.get("/", function(req,res){
-//     res.json({msg:"hello"});
-// });
 
 //Routes
 app.use("/api/users",require("./routes/users"));
@@ -32,5 +29,5 @@ if(process.env.NODE_ENV !== 'production') {
 }
 
 app.listen(PORT,function(){
-    console.log("Server listens on port "+PORT);
+    console.log("Server listening on port "+PORT);
 })
