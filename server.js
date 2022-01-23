@@ -17,9 +17,9 @@ connectDB();
 //body-parser
 app.use(express.json({extended:false}));
 
-// app.get("/", function(req,res){
-//     res.json({msg:"hello"});
-// });
+app.get("/", function(req,res){
+    res.json({msg:"hello"});
+});
 
 //Routes
 app.use("/api/users",require("./routes/users"));
